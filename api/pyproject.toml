@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "fatcat"
+version = "0.1.0"
+authors = ["Logan Hennessy <loganjhennessy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.53.1"
+gunicorn = "^20.0"
+requests = "^2.22"
+
+[tool.poetry.dev-dependencies]
+uvicorn = "^0.11.3"

@@ -1,11 +1,13 @@
 import React from 'react';
-import './App.css';
 import StockTable from './StockTable';
+import './App.css';
+
+const apiUrl = "http://localhost:8000/api";
 
 function App() {
   return (
     <div className="App">
-      <StockTable/>
+      <StockTable apiUrl={apiUrl}/>
     </div>
   );
 }
