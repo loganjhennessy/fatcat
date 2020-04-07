@@ -1,0 +1,10 @@
+{
+  "databaseVersion": "POSTGRES_12",
+  "name": "fatcat-db",
+  "region": "us-central1",
+  "rootPassword": "",
+  "settings": {
+    "tier": "db-custom-1-3840",
+    "dataDiskType": "PD_SSD"
+  }
+}

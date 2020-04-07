@@ -1,0 +1,5 @@
+{
+    "name": "stocks",
+    "instance": "fatcat-db",
+    "project": "fatcat-app"
+}
