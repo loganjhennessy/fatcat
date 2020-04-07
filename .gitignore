@@ -1,5 +1,11 @@
+# Apple
+.DS_Store
+
+# JetBrains
 .idea/
 
-build/
-
+# Python
 __pycache__/
+
+# React
+build/
