@@ -4,18 +4,37 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test:
-    executor: python/default
+  build:
     steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
+      - setup_remote_docker
       - run:
-          command: ./manage.py test
-          name: Test
+          name: Login to Dockerhub
+          command: docker login --username loganjhennessy --password $DOCKER_PASS
+      - run:
+          name: Build infrastructure image
+          command: docker build --file infra/Dockerfile --tag loganjhennessy/gcp-infra-config-python:$CIRCLE_BRANCH
+      - run:
+          name:
+
+
+#  test:
+#    steps:
+#      - checkout
+#      - python/load-cache
+#      - python/install-deps
+#      - python/save-cache
+#      - run:
+#          command: ./manage.py test
+#          name: Test
+
+  push:
+    docker:
+      - image: python:3.8.2-buster
 
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
+
+#docker tag local-image:tagname new-repo:tagname
+#docker push new-repo:tagname
