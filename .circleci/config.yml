@@ -9,5 +9,5 @@ workflows:
   version: 2
   main:
     jobs:
-      sync-infrastructure:
-        requires: hold
+      - sync-infrastructure:
+          requires: hold
