@@ -14,7 +14,17 @@ jobs:
           name: Build infrastructure image
           command: docker build --file infra/Dockerfile --tag loganjhennessy/gcp-infra-config-python:$CIRCLE_BRANCH
       - run:
-          name:
+          name: Push infrastructure image
+          command: docker push loganjhennessy/gcp-infra-config-python:$CIRCLE_BRANCH
+
+  push:
+    docker:
+      - image: python:3.8.2-buster
+
+workflows:
+  main:
+    jobs:
+      - build
 
 
 #  test:
@@ -27,14 +37,5 @@ jobs:
 #          command: ./manage.py test
 #          name: Test
 
-  push:
-    docker:
-      - image: python:3.8.2-buster
-
-workflows:
-  main:
-    jobs:
-      - build
-
-#docker tag local-image:tagname new-repo:tagname
-#docker push new-repo:tagname
+# docker tag local-image:tagname new-repo:tagname
+# docker push new-repo:tagname
