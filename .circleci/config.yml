@@ -5,6 +5,7 @@ jobs:
       - image: python:3.8.2-slim-buster
     steps:
       - checkout
+      - run: pip install infra/requirements.txt
       - run: python infra/deploy.py
 
 workflows:
