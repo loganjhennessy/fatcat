@@ -1,8 +1,5 @@
 workflows:
   version: 2.1
-
-#orbs:
-#  python: circleci/python@0.2.1
   main:
     jobs:
       sync-infrastructure:
@@ -11,8 +8,3 @@ workflows:
         requires: hold
         steps:
           - run: python infra/deploy.py
-#
-#workflows:
-#  main:
-#    jobs:
-#      - sync-infrastructure
