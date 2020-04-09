@@ -1,17 +1,18 @@
-version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
-jobs:
-  sync-infrastructure:
-    docker:
-      - image: python:3.8.2-slim-buster
-    requires: hold
-    steps:
-      - run: python infra/deploy.py
-
 workflows:
+  version: 2.1
+
+#orbs:
+#  python: circleci/python@0.2.1
   main:
     jobs:
-      - sync-infrastructure
+      sync-infrastructure:
+        docker:
+          - image: python:3.8.2-slim-buster
+        requires: hold
+        steps:
+          - run: python infra/deploy.py
+#
+#workflows:
+#  main:
+#    jobs:
+#      - sync-infrastructure
