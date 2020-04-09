@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: python:3.8.2-slim-buster
     steps:
+      - checkout
       - run: python infra/deploy.py
 
 workflows:
