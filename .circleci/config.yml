@@ -3,7 +3,8 @@ jobs:
   sync-infrastructure:
     docker:
       - image: python:3.8.2-slim-buster
-    steps: python infra/deploy.py
+    steps:
+      - run: python infra/deploy.py
 
 workflows:
   version: 2
