@@ -9,3 +9,6 @@ __pycache__/
 
 # React
 build/
+
+# Sqlite
+*.db
