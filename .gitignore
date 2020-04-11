@@ -12,3 +12,6 @@ build/
 
 # Sqlite
 *.db
+
+# Fatcat-Specific
+api_key.txt

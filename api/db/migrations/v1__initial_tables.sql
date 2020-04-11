@@ -1,6 +1,6 @@
 PRAGMA foreign_keys = ON;
 
-CREATE TABLE company (
+CREATE TABLE IF NOT EXISTS company (
     id          INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
   , symbol      TEXT
   , name        TEXT
@@ -12,14 +12,14 @@ CREATE TABLE company (
   , ceo         TEXT
 );
 
-CREATE TABLE metric (
+CREATE TABLE IF NOT EXISTS metric (
     id            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
   , abbreviation  TEXT
   , name          TEXT
   , description   TEXT
 );
 
-CREATE TABLE statement (
+CREATE TABLE IF NOT EXISTS statement (
     statement_id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
   , metric_id     INTEGER
   , company_id    INTEGER REFERENCES company  (id)
