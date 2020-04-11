@@ -1,7 +1,7 @@
 PRAGMA foreign_keys = ON;
 
 CREATE TABLE IF NOT EXISTS company (
-    id          INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+    id          TEXT PRIMARY KEY
   , symbol      TEXT
   , name        TEXT
   , description TEXT
@@ -13,16 +13,16 @@ CREATE TABLE IF NOT EXISTS company (
 );
 
 CREATE TABLE IF NOT EXISTS metric (
-    id            INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
+    id            TEXT PRIMARY KEY
   , abbreviation  TEXT
   , name          TEXT
   , description   TEXT
 );
 
 CREATE TABLE IF NOT EXISTS statement (
-    statement_id  INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT
-  , metric_id     INTEGER
-  , company_id    INTEGER REFERENCES company  (id)
+    statement_id  TEXT NOT NULL PRIMARY KEY
+  , metric_id     TEXT
+  , company_id    TEXT REFERENCES company  (id)
   , value         NUMERIC(50, 12)
   , date          DATE
   , FOREIGN KEY(metric_id) REFERENCES metric(id)

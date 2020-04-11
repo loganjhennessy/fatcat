@@ -4,7 +4,7 @@ description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
 optional = false
 python-versions = "*"
-version = "2019.11.28"
+version = "2020.4.5.1"
 
 [[package]]
 category = "main"
@@ -15,7 +15,7 @@ python-versions = "*"
 version = "3.0.4"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Composable command line interface toolkit"
 name = "click"
 optional = false
@@ -28,7 +28,7 @@ description = "FastAPI framework, high performance, easy to learn, fast to code,
 name = "fastapi"
 optional = false
 python-versions = ">=3.6"
-version = "0.53.1"
+version = "0.53.2"
 
 [package.dependencies]
 pydantic = ">=0.32.2,<2.0.0"
@@ -46,7 +46,7 @@ version = "20.0.4"
 setuptools = ">=3.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 name = "h11"
 optional = false
@@ -54,7 +54,7 @@ python-versions = "*"
 version = "0.9.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "A collection of framework independent HTTP protocol utils."
 marker = "sys_platform != \"win32\" and sys_platform != \"cygwin\" and platform_python_implementation != \"PyPy\""
 name = "httptools"
@@ -109,7 +109,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 version = "1.25.8"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "The lightning-fast ASGI server."
 name = "uvicorn"
 optional = false
@@ -124,7 +124,7 @@ uvloop = ">=0.14.0"
 websockets = ">=8.0.0,<9.0.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "Fast implementation of asyncio event loop on top of libuv"
 marker = "sys_platform != \"win32\" and sys_platform != \"cygwin\" and platform_python_implementation != \"PyPy\""
 name = "uvloop"
@@ -133,7 +133,7 @@ python-versions = "*"
 version = "0.14.0"
 
 [[package]]
-category = "dev"
+category = "main"
 description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
 name = "websockets"
 optional = false
@@ -141,14 +141,14 @@ python-versions = ">=3.6.1"
 version = "8.1"
 
 [metadata]
-content-hash = "b4b63d9227af881ef1477069f4a4fddbab5d09958634ae140b9b5bcf09569aca"
+content-hash = "af3593476368cf051b2e23d8a8964a1be22d803f100cfb974b6a03d40e627eec"
 python-versions = "^3.7"
 
 [metadata.hashes]
-certifi = ["017c25db2a153ce562900032d5bc68e9f191e44e9a0f762f373977de9df1fbb3", "25b64c7da4cd7479594d035c08c2d809eb4aab3a26e5a990ea98cc450c320f1f"]
+certifi = ["1d987a998c75633c40847cc966fcf5904906c920a7f17ef374f5aa4282abd304", "51fcb31174be6e6664c5f69e3e1691a2d72a1a12e90f872cbdb1567eb47b6519"]
 chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"]
 click = ["8a18b4ea89d8820c5d0c7da8a64b2c324b4dabb695804dbfea19b9be9d88c0cc", "e345d143d80bf5ee7534056164e5e112ea5e22716bbb1ce727941f4c8b471b9a"]
-fastapi = ["c2d572370153a6b74d62a73252d75934e2bfdbb0f620fecfd489b5d4789f5c48", "c478bc513d192f6776fd3f0355b7ff5414e94ed842677294c06e348105aaa237"]
+fastapi = ["a5cb9100d5f2b5dd82addbc2cdf8009258bce45b03ba21d3f5eecc88c7b5a716", "cf26d47ede6bc6e179df951312f55fea7d4005dd53370245e216436ca4e22f22"]
 gunicorn = ["1904bb2b8a43658807108d59c3f3d56c2b6121a701161de0ddf9ad140073c626", "cd4a810dd51bf497552cf3f863b575dabd73d6ad6a91075b65936b151cbf4f9c"]
 h11 = ["33d4bca7be0fa039f4e84d50ab00531047e53d6ee8ffbc83501ea602c169cae1", "4bc6d6a1238b7615b266ada57e0618568066f57dd6fa967d1290ec9309b2f2f1"]
 httptools = ["0a4b1b2012b28e68306575ad14ad5e9120b34fccd02a81eb08838d7e3bbb48be", "3592e854424ec94bd17dc3e0c96a64e459ec4147e6d53c0a42d0ebcef9cb9c5d", "41b573cf33f64a8f8f3400d0a7faf48e1888582b6f6e02b82b9bd4f0bf7497ce", "56b6393c6ac7abe632f2294da53f30d279130a92e8ae39d8d14ee2e1b05ad1f2", "86c6acd66765a934e8730bf0e9dfaac6fdcf2a4334212bd4a0a1c78f16475ca6", "96da81e1992be8ac2fd5597bf0283d832287e20cb3cfde8996d2b00356d4e17f", "96eb359252aeed57ea5c7b3d79839aaa0382c9d3149f7d24dd7172b1bcecb009", "a2719e1d7a84bb131c4f1e0cb79705034b48de6ae486eb5297a139d6a3296dce", "ac0aa11e99454b6a66989aa2d44bca41d4e0f968e395a0a8f164b401fefe359a", "bc3114b9edbca5a1eb7ae7db698c669eb53eb8afbbebdde116c174925260849c", "fa3cd71e31436911a44620473e873a256851e1f53dee56669dae403ba41756a4", "fea04e126014169384dee76a153d4573d90d0cbd1d12185da089f73c78390437"]

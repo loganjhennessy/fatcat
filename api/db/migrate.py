@@ -1,6 +1,8 @@
 import os
 import sqlite3
 
+import click
+
 
 def get_migration_paths():
     migration_filenames = os.listdir("migrations")
@@ -12,8 +14,10 @@ def get_migration_sql(migration_path):
         return f.read()
 
 
-def main(dbname):
-    conn = sqlite3.connect(dbname)
+@click.command()
+@click.option('--dbpath', default='db/fatcat.db')
+def run_db_migrations(dbpath):
+    conn = sqlite3.connect(dbpath)
     cur = conn.cursor()
     migrations = get_migration_paths()
 
@@ -25,8 +29,3 @@ def main(dbname):
         print(e)
     conn.commit()
     conn.close()
-
-
-if __name__ == "__main__":
-    db = "fatcat.db"
-    main(db)
