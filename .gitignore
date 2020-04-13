@@ -14,4 +14,4 @@ build/
 *.db
 
 # Fatcat-Specific
-api_key.txt
+fmp_api_key.txt
