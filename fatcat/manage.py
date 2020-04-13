@@ -3,6 +3,7 @@ import click
 from fatcat.db.migrate import run_db_migrations
 from fatcat.fmp.populate_companies import populate_companies
 
+
 @click.group()
 def cli():
     pass

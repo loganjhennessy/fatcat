@@ -1,15 +1,10 @@
 import functools
-import pickle
-import sqlite3
 from typing import Dict
 
 import requests
 
 from fatcat.config import config
-from fatcat.db import db_connect
-
-sqlite3.register_converter("pickle", pickle.loads)
-sqlite3.register_adapter(requests.Response, pickle.dumps)
+from fatcat.db import get_db_conn
 
 
 def check_cache(check_cached_func, cache_response_func):
@@ -23,39 +18,27 @@ def check_cache(check_cached_func, cache_response_func):
                 cache_response_func(url, response)
                 return response
             else:
-                return cache_results
+                return cache_results['response']
         return get_wrapper
     return decorator_check_cache
 
 
 def check_cache_func(url):
-    # con = sqlite3.connect('db/fatcat.db', detect_types=sqlite3.PARSE_DECLTYPES)
-    con = db_connect()
-    con.row_factory = sqlite3.Row
+    con = get_db_conn()
     cur = con.cursor()
 
     with con:
         cur.execute("SELECT * FROM request_cache where url = ?", (url,))
 
-    response = cur.fetchone()
-    if not response:
-        con.close()
-    else:
-        response = response['response']
-        con.close()
-    return response
+    return cur.fetchone()
 
 
 def cache_response_func(url, response):
-    # con = sqlite3.connect('db/fatcat.db', detect_types=sqlite3.PARSE_DECLTYPES)
-    con = db_connect()
-    con.row_factory = sqlite3.Row
+    con = get_db_conn()
     cur = con.cursor()
 
     with con:
         cur.execute("INSERT INTO request_cache VALUES (?, ?)", (url, response))
-
-    con.close()
 
 
 def make_prepped_url(url: str, params: Dict[str, str]={}) -> str:
